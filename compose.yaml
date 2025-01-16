@@ -1,0 +1,47 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: tests.Dockerfile
+    container_name: tests-server
+    depends_on:
+      api-mock:
+        condition: service_started
+      mock-database:
+        condition: service_started
+    working_dir: /opt/project
+    volumes:
+      - ./tests_lib:/opt/project/tests_lib
+      - ./tests:/opt/project/tests
+      - api_mock_certs:/root/ca/rsa/volumed_dir
+#  infinite loop to run container
+#    entrypoint: ["sh", "-c", "while true; do sleep 1000; done"]
+    entrypoint: 'poetry run python3 -m pytest'
+
+  api-mock:
+    build: .
+    container_name: api-mock-server
+    restart: always
+    volumes:
+      - api_mock_certs:/root/ca/rsa/volumed_dir
+    expose:
+      - "80"
+      - "443"
+
+  mock-database:
+    image: postgres:latest
+    container_name: mock-db-server
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mockdb
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+# Almost empty database
+#      - ./database/empty.sql:/docker-entrypoint-initdb.d/init.sql
+    expose:
+      - "5432"
+
+volumes:
+  api_mock_certs:
