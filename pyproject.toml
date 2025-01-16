@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "test_support"
+version = "0.1.0"
+description = "Library for running and managing tests."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.3.4"
+requests = "^2.32.3"
+psycopg2-binary = "^2.9.10"
+python-dotenv = "^1.0.1"
+selenium = "^4.27.1"
+pyyaml = "^6.0.2"
+pytest-custom-outputs = "^1.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
