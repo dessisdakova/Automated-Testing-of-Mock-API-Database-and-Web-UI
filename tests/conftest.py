@@ -42,4 +42,3 @@ def log_test_start_and_result(request) -> None:
         logger.error(f"Test FAILED. \n Error: \n {get_results(request)['message']}\n")
     else:
         logger.warning(f"Test {get_results(request)['status']}.\n")
-

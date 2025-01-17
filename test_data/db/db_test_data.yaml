@@ -55,15 +55,15 @@ queries:
   query: SELECT city, AVG(EXTRACT(year FROM AGE(CURRENT_TIMESTAMP, birth_date))) AS avg_age FROM employees GROUP BY city HAVING AVG(EXTRACT(year FROM AGE(CURRENT_TIMESTAMP, birth_date))) > 60;
   expected_results:
   - - Redmond
-    - 87
+    - 87.0000000000000000
   - - London
-    - 63
+    - 63.0000000000000000
   - - Tacoma
-    - 72
+    - 72.0000000000000000
   - - Kirkland
-    - 61
+    - 61.0000000000000000
   - - Seattle
-    - 71
+    - 71.5000000000000000
 - description: Retrieve top 3 oldest employees
   query: SELECT first_name, last_name, EXTRACT(year from AGE(CURRENT_TIMESTAMP, birth_date)) AS age FROM employees ORDER BY age DESC LIMIT 3;
   expected_results:

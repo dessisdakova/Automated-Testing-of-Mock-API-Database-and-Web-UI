@@ -16,4 +16,3 @@ def db_connection(db_logger):
     yield db
     db.close()
     db_logger.info("Connection to the database is closed.")
-

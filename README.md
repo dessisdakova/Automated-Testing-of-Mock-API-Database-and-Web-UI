@@ -21,7 +21,6 @@ This project demonstrates **manual** and **automated testing** for **API**, **da
 - Automated SQL query tests using Python:
 	- Validated connection.
 	- Verified query outputs against expected results.
-- Managed sensitive information securely through environment variables.
 
 ------------
 
