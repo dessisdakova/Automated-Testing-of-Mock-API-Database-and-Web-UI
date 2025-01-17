@@ -30,7 +30,7 @@ def load_config(file_name: str):
     """
     if not file_name.endswith(".yaml"):
         file_name += ".yaml"
-    file_path = CONFIG_DIRECTORY / file_name
+    file_path = CONFIG_DIRECTORY + file_name
     return load_yaml(file_path)
 
 
@@ -43,7 +43,7 @@ def load_api_test_data(file_name: str) -> Any:
     """
     if not file_name.endswith(".yaml"):
         file_name += ".yaml"
-    file_path = TEST_DATA_API_DIRECTORY / file_name
+    file_path = TEST_DATA_API_DIRECTORY + file_name
     return load_yaml(file_path)
 
 
@@ -56,7 +56,7 @@ def load_db_test_data(file_name: str) -> Any:
     """
     if not file_name.endswith(".yaml"):
         file_name += ".yaml"
-    file_path = TEST_DATA_DB_DIRECTORY / file_name
+    file_path = TEST_DATA_DB_DIRECTORY + file_name
     return load_yaml(file_path)
 
 
@@ -69,5 +69,5 @@ def load_web_ui_test_data(file_name: str) -> Any:
     """
     if not file_name.endswith(".yaml"):
         file_name += ".yaml"
-    file_path = TEST_DATA_WEB_UI_DIRECTORY / file_name
+    file_path = TEST_DATA_WEB_UI_DIRECTORY + file_name
     return load_yaml(file_path)

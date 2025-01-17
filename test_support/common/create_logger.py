@@ -21,7 +21,7 @@ def create_logger(logger_name: str, log_file_prefix: str) -> logging.Logger:
     log_file_name = f"{log_file_prefix}_{timestamp}.log"
 
     # set path for save
-    log_file_path = LOGS_DIRECTORY / log_file_name
+    log_file_path = LOGS_DIRECTORY + log_file_name
 
     # create a file handler and a formatter
     file_handler = logging.FileHandler(log_file_path)

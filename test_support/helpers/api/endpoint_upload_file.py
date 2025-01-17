@@ -1,6 +1,6 @@
 from test_support.helpers.api.base_api import BaseAPI
+from test_support.PATHS import TEST_DATA_API_DIRECTORY
 import requests
-from pathlib import Path
 
 
 class EndpointUploadFile(BaseAPI):
@@ -19,13 +19,13 @@ class EndpointUploadFile(BaseAPI):
         return "/file/add"
 
     @staticmethod
-    def get_file_path(file_name: str) -> Path:
+    def get_file_path(file_name: str) -> str:
         """
-        Get the file for uploading from test_data/ folder.
+        Get the file for uploading from test_data/api folder.
 
-        :return: Path to file.
+        :return: Path to file represented in string format.
         """
-        return Path(__file__).resolve().parent.parent.parent.parent / "test_data" / file_name
+        return TEST_DATA_API_DIRECTORY + file_name
 
     def upload_file_to_server(self, files: dict = None) -> requests.Response:
         """
