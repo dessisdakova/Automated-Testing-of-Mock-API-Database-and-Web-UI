@@ -1,0 +1,29 @@
+2025/01/17 13:26:21 | INFO  | Connection to the database is established.
+2025/01/17 13:26:21 | INFO  |  === test_provided_queries[test_data0] === 
+2025/01/17 13:26:21 | DEBUG | Query for execution: SELECT product_name, unit_price FROM products ORDER BY unit_price DESC LIMIT 10;.
+2025/01/17 13:26:21 | DEBUG | Executed query for 'Retrieve top 10 most expensive products'.
+2025/01/17 13:26:21 | INFO  | Test PASSED.
+
+2025/01/17 13:26:21 | INFO  |  === test_provided_queries[test_data1] === 
+2025/01/17 13:26:21 | DEBUG | Query for execution: SELECT employee_id, SUM(freight) FROM orders GROUP BY employee_id ORDER BY employee_id;.
+2025/01/17 13:26:21 | DEBUG | Executed query for 'Sum of freight charges by employee'.
+2025/01/17 13:26:21 | INFO  | Test PASSED.
+
+2025/01/17 13:26:21 | INFO  |  === test_provided_queries[test_data2] === 
+2025/01/17 13:26:21 | DEBUG | Query for execution: SELECT city, AVG(EXTRACT(year from AGE(CURRENT_TIMESTAMP, birth_date))), MAX(EXTRACT(year from AGE(CURRENT_TIMESTAMP, birth_date))), MIN(EXTRACT(year from AGE(CURRENT_TIMESTAMP, birth_date))) FROM employees WHERE city = 'London' GROUP BY city;.
+2025/01/17 13:26:21 | DEBUG | Executed query for 'City-wise average, maximum, and minimum age of employees in London'.
+2025/01/17 13:26:21 | INFO  | Test PASSED.
+
+2025/01/17 13:26:21 | INFO  |  === test_provided_queries[test_data3] === 
+2025/01/17 13:26:21 | DEBUG | Query for execution: SELECT city, AVG(EXTRACT(year FROM AGE(CURRENT_TIMESTAMP, birth_date))) AS avg_age FROM employees GROUP BY city HAVING AVG(EXTRACT(year FROM AGE(CURRENT_TIMESTAMP, birth_date))) > 60;.
+2025/01/17 13:26:21 | DEBUG | Executed query for 'City-wise average age of employees above 60'.
+2025/01/17 13:26:21 | ERROR | Test FAILED. 
+ Error: 
+ Result mismatch:
+
+2025/01/17 13:26:21 | INFO  |  === test_provided_queries[test_data4] === 
+2025/01/17 13:26:21 | DEBUG | Query for execution: SELECT first_name, last_name, EXTRACT(year from AGE(CURRENT_TIMESTAMP, birth_date)) AS age FROM employees ORDER BY age DESC LIMIT 3;.
+2025/01/17 13:26:21 | DEBUG | Executed query for 'Retrieve top 3 oldest employees'.
+2025/01/17 13:26:21 | INFO  | Test PASSED.
+
+2025/01/17 13:26:21 | INFO  | Connection to the database is closed.

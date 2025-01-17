@@ -1,0 +1,27 @@
+2025/01/17 13:26:03 | INFO  | Connection to the database is established.
+2025/01/17 13:26:03 | INFO  |  === test_provided_queries[test_data0] === 
+2025/01/17 13:26:03 | ERROR | Test FAILED. 
+ Error: 
+ logger
+
+2025/01/17 13:26:03 | INFO  |  === test_provided_queries[test_data1] === 
+2025/01/17 13:26:03 | ERROR | Test FAILED. 
+ Error: 
+ logger
+
+2025/01/17 13:26:03 | INFO  |  === test_provided_queries[test_data2] === 
+2025/01/17 13:26:03 | ERROR | Test FAILED. 
+ Error: 
+ logger
+
+2025/01/17 13:26:03 | INFO  |  === test_provided_queries[test_data3] === 
+2025/01/17 13:26:03 | ERROR | Test FAILED. 
+ Error: 
+ logger
+
+2025/01/17 13:26:03 | INFO  |  === test_provided_queries[test_data4] === 
+2025/01/17 13:26:03 | ERROR | Test FAILED. 
+ Error: 
+ logger
+
+2025/01/17 13:26:03 | INFO  | Connection to the database is closed.
