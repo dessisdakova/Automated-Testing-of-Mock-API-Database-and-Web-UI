@@ -1,0 +1,172 @@
+Different_types_and_missing_values_in_body_key:
+  - body: []
+    status_code: 201
+  - body: {}
+    status_code: 201
+  - body: []
+    status_code: '201'
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 201
+  - body:
+      - deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 201
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: 1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 201
+Missing_body_or_status_code_key:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+  - status_code: 201
+Status_code_array_float:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code:
+      - 200
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 200.00
+Status_code_object:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code:
+      code: 300
+Status_code_invalid_string:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: text
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        deviceAddresses:
+          fqdn: test.com
+          ipv4Address: 10.0.49.140
+          ipv6Address: 'null'
+        id: UPDATED_1
+        ipAddress: 10.0.49.140
+        model: TEST_DEVICE
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: '200.00'
+Status_code_invalid_number:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: -200
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 0
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 100
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 99
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 1000
+Status_code_valid_number:
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 200
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 300
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 500
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 707
+  - body:
+      - build: 20240410.1854-8f4e21frg65t
+        serialNum: TEST1-1fecaf6a-0619-41b1-86d8-acf36064f9ec
+        version: 2.3.12
+    status_code: 999

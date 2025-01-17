@@ -1,0 +1,98 @@
+Different_types:
+  - body:
+      guids: []
+    status_code: 333
+  - body:
+      guids: string
+    status_code: 333
+  - body:
+      guids: {}
+    status_code: 333
+  - body:
+      guids:
+        - 0001
+        - 0002
+    status_code: 333
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: '333'
+Missing_key:
+  - status_code: 333
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+Status_code_array_float:
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code:
+      - 333
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 333.00
+Status_code_object:
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code:
+      code: 204
+Status_code_invalid_string:
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: text
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: '400.00'
+Status_code_invalid_number:
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: -1
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 0
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 100
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 1000
+Status_code_valid_number:
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 200
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 201
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 500
+  - body:
+      guids:
+        - '0001'
+        - '0002'
+    status_code: 999
