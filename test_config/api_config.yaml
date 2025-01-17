@@ -1,0 +1,3 @@
+api_host: api-mock-server
+use_https: true # true or false
+cert_file: /root/ca/rsa/volumed_dir/ca.cert.pem
