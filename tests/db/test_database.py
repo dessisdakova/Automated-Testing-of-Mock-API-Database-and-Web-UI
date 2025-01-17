@@ -14,5 +14,5 @@ def test_provided_queries(db_connection, test_data, db_logger):
     actual = db_connection.execute_query(query)
 
     # assert
-    assert expected == actual, f"Result mismatch:\n Expected: {expected} \n Actual: {actual}\n"
+    assert expected == actual
 
