@@ -45,8 +45,9 @@ def driver(web_ui_logger) -> Generator[webdriver.Remote, None, None]:
 
 
 @pytest.fixture(scope="function")
-def login_page(driver):
-    """Fixture to create Login page instance and load it."""
+def driver_logged_in(driver):
+    """Fixture to login to the site using standard_user"""
     login_page = LoginPage(driver)
     login_page.load(5)
-    return login_page
+    login_page.login("standard_user", "secret_sauce")
+    return driver
