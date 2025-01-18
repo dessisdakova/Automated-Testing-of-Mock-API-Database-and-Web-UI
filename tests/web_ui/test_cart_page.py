@@ -1,16 +1,14 @@
-from test_support.common.yaml_loaders import load_web_ui_test_data
 from test_support.helpers.web_ui.cart_page import CartPage
 from test_support.helpers.web_ui.inventory_page import InventoryPage
-from tests.web_ui.fixtures import *
+from fixtures import *
 
 
-@pytest.mark.parametrize("input_data", load_web_ui_test_data("entire_flow"))
-def test_cart_page_verify_items_in_shopping_cart(driver_logged_in, web_ui_logger, input_data):
+def test_cart_page_verify_items_in_shopping_cart(driver_logged_in, web_ui_logger):
     """
     Test that added items from Inventory page are present in Cart page.
     """
     # arrange
-    web_ui_logger.debug(f"Login with username: {input_data['username']}.")
+    web_ui_logger.debug(f"Login with username: standard_user.")
     inventory_page = InventoryPage(driver_logged_in)
     inventory_page.load(5)
     inventory_page.add_item_to_cart("Backpack")
@@ -28,13 +26,12 @@ def test_cart_page_verify_items_in_shopping_cart(driver_logged_in, web_ui_logger
     assert "Sauce Labs Backpack" in cart_page.get_item_names_in_cart(), f"Expected item name not found in cart."
 
 
-@pytest.mark.parametrize("input_data", load_web_ui_test_data("entire_flow"))
-def test_cart_page_verify_checkout_button(driver_logged_in, web_ui_logger, input_data):
+def test_cart_page_verify_checkout_button(driver_logged_in, web_ui_logger):
     """
     Test that the Checkout button in Cart page redirects to Checkout step One page.
     """
     # arrange
-    web_ui_logger.debug(f"Login with username: {input_data['username']}.")
+    web_ui_logger.debug(f"Login with username: standard_user.")
     cart_page = CartPage(driver_logged_in)
     cart_page.load(5)
     web_ui_logger.info(f"Page with url '{cart_page.base_url}' is loaded.")
