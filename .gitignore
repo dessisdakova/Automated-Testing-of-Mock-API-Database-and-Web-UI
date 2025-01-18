@@ -5,3 +5,4 @@ venv/
 env/
 .idea/
 !test_logs/keep
+test_logs/*
