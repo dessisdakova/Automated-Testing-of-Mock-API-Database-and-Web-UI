@@ -10,7 +10,7 @@ def test_login_with_valid_users(driver, input_data, web_ui_logger):
     # arrange
     login_page = LoginPage(driver)
     login_page.load(5)
-    web_ui_logger.debug(f"Page with url '{login_page.base_url}' is loaded.")
+    web_ui_logger.info(f"Page with url '{login_page.base_url}' is loaded.")
 
     # act
     login_page.login(input_data["username"], input_data["password"])
@@ -29,7 +29,7 @@ def test_login_with_invalid_users(driver, input_data, web_ui_logger):
     # arrange
     login_page = LoginPage(driver)
     login_page.load(5)
-    web_ui_logger.debug(f"Page with url '{login_page.base_url}' is loaded.")
+    web_ui_logger.info(f"Page with url '{login_page.base_url}' is loaded.")
 
     # act
     login_page.login(input_data["username"], input_data["password"])
@@ -50,7 +50,7 @@ def test_login_with_locked_out_user(driver, input_data, web_ui_logger):
     # arrange
     login_page = LoginPage(driver)
     login_page.load(5)
-    web_ui_logger.debug(f"Page with url '{login_page.base_url}' is loaded.")
+    web_ui_logger.info(f"Page with url '{login_page.base_url}' is loaded.")
 
     # act
     login_page.login(input_data["username"], input_data["password"])
