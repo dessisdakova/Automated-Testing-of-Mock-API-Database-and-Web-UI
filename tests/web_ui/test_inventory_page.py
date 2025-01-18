@@ -4,14 +4,15 @@ from tests.web_ui.fixtures import *
 
 
 @pytest.mark.parametrize("input_data", load_web_ui_test_data("inventory_page_items"))
-def test_add_item_to_cart(driver_logged_in, input_data, web_ui_logger):
+def test_inventory_page_add_item_to_cart(driver_logged_in, input_data, web_ui_logger):
     """
     Test that items can be added from Inventory page into shopping cart.
     """
     # arrange
+    web_ui_logger.debug(f"Login with username: standard_user.")
     inventory_page = InventoryPage(driver_logged_in)
     inventory_page.load(5)
-    web_ui_logger.debug(f"Page with url '{inventory_page.base_url}' is loaded.")
+    web_ui_logger.info(f"Page with url '{inventory_page.base_url}' is loaded.")
 
     # act
     inventory_page.add_item_to_cart(input_data["item"])

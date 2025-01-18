@@ -1,5 +1,7 @@
 from test_support.common.yaml_loaders import load_web_ui_test_data
-from tests.web_ui.fixtures import *
+from test_support.helpers.web_ui.login_page import LoginPage
+from fixtures import *
+import pytest
 
 
 @pytest.mark.parametrize("input_data", load_web_ui_test_data("login_page_valid_users"))
