@@ -1,0 +1,6 @@
+- username: standard_user
+  password: invalidpassword
+- username: invaliduser
+  password: secret_sauce
+- username: unregisteruser
+  password: somepassword

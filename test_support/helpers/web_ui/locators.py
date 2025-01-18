@@ -4,12 +4,16 @@ from selenium.webdriver.common.by import By
 USERNAME_FIELD = (By.CSS_SELECTOR, "input[data-test='username']")
 PASSWORD_FIELD = (By.CSS_SELECTOR, "input[data-test='password']")
 LOGIN_BUTTON = (By.CSS_SELECTOR, "input[data-test='login-button']")
+ERROR_HEADER = (By.CSS_SELECTOR, "h3[data-test='error']")
 LOGO_DIV = (By.CLASS_NAME, "login_logo")  # for explicit wait
 
 # Inventory Page
 SHOPPING_CART_LINK = (By.CSS_SELECTOR, "a[data-test='shopping-cart-link']")
 ADD_BACKPACK_BUTTON = (By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-backpack']")
 ADD_BIKE_LIGHT_BUTTON = (By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-bike-light']")
+ADD_BOLT_T_SHIRT_BUTTON = (By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-bolt-t-shirt']")
+ADD_FLEECE_JACKET_BUTTON = (By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-fleece-jacket']")
+ADD_ONESIE_BUTTON = (By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-onesie']")
 SHOPPING_CART_BADGE = (By.CSS_SELECTOR, "span[data-test='shopping-cart-badge']")
 INVENTORY_CONTAINER = (By.ID, "inventory_container")  # for explicit wait
 
