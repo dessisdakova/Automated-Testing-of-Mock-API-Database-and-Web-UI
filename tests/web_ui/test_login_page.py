@@ -3,11 +3,13 @@ from tests.web_ui.fixtures import *
 
 
 @pytest.mark.parametrize("input_data", load_web_ui_test_data("login_page_valid_users"))
-def test_login_with_valid_users(driver,login_page, input_data, web_ui_logger):
+def test_login_with_valid_users(driver, input_data, web_ui_logger):
     """
     Login with valid users should redirect to Inventory page.
     """
     # arrange
+    login_page = LoginPage(driver)
+    login_page.load(5)
     web_ui_logger.debug(f"Page with url '{login_page.base_url}' is loaded.")
 
     # act
@@ -20,11 +22,13 @@ def test_login_with_valid_users(driver,login_page, input_data, web_ui_logger):
 
 
 @pytest.mark.parametrize("input_data", load_web_ui_test_data("login_page_invalid_users"))
-def test_login_with_invalid_users(driver,login_page, input_data, web_ui_logger):
+def test_login_with_invalid_users(driver, input_data, web_ui_logger):
     """
     Login with invalid users should keep user on Login page and show error message..
     """
     # arrange
+    login_page = LoginPage(driver)
+    login_page.load(5)
     web_ui_logger.debug(f"Page with url '{login_page.base_url}' is loaded.")
 
     # act
@@ -39,7 +43,7 @@ def test_login_with_invalid_users(driver,login_page, input_data, web_ui_logger):
 
 
 @pytest.mark.parametrize("input_data", load_web_ui_test_data("login_page_locked_out_user"))
-def test_login_with_locked_out_user(driver, login_page, input_data, web_ui_logger):
+def test_login_with_locked_out_user(driver, input_data, web_ui_logger):
     """
     Login with locked out user should keep user on Login page and show error message.
     """

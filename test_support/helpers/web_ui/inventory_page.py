@@ -28,17 +28,24 @@ class InventoryPage(BasePage):
     def add_item_to_cart(self, item: str) -> None:
         """
         Add item to cart based on the following values:
-         - "backpack" - adds Sauce Labs Backpack
-         - "bike-light" - adds Sauce Labs Bike Light
+         - "Backpack" - adds Sauce Labs Backpack
+         - "Bike Light" - adds Sauce Labs Bike Light
+         - "Bolt T-Shirt" - adds Sauce Labs Bolt T-Shirt
+         - "Fleece Jacket" - adds Sauce Labs Fleece Jacket
+         - "Onesie" - adds Sauce Labs Onesie
 
         :param item: Must be one of the provided values.
-        :return: None
-        :raises ValueError: If the value of item does not match the provided ones.
         """
-        if item == "backpack":
+        if item == "Backpack":
             self.driver.find_element(*ADD_BACKPACK_BUTTON).click()
-        elif item == "bike-light":
+        elif item == "Bike Light":
             self.driver.find_element(*ADD_BIKE_LIGHT_BUTTON).click()
+        elif item == "Bolt T-Shirt":
+            self.driver.find_element(*ADD_BOLT_T_SHIRT_BUTTON).click()
+        elif item == "Fleece Jacket":
+            self.driver.find_element(*ADD_FLEECE_JACKET_BUTTON).click()
+        elif item == "Onesie":
+            self.driver.find_element(*ADD_ONESIE_BUTTON).click()
         else:
             raise ValueError(f"Unknown item '{item}'!")
 
@@ -54,3 +61,4 @@ class InventoryPage(BasePage):
         Navigate to the shopping cart page by clicking the cart link.
         """
         self.driver.find_element(*SHOPPING_CART_LINK).click()
+
