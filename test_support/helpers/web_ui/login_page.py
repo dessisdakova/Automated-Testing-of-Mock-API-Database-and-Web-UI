@@ -36,3 +36,7 @@ class LoginPage(BasePage):
         self.driver.find_element(*USERNAME_FIELD).send_keys(username)
         self.driver.find_element(*PASSWORD_FIELD).send_keys(password)
         self.driver.find_element(*LOGIN_BUTTON).click()
+
+    def get_error_message(self):
+        """Retrieve the message text for unsuccessful login."""
+        return self.driver.find_element(*ERROR_HEADER).text
