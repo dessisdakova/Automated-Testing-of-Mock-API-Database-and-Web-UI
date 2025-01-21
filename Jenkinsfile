@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Containers') {
             steps {
                 script {
-                    sh 'docker-compose up -d --build'
+                    bash 'docker-compose up -d --build'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
         stage('Run All Tests') {
             steps {
                 script {
-                    sh 'docker-compose run tests'
+                    bash 'docker-compose run tests'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage('Tear Down') {
             steps {
                 script {
-                    sh 'docker-compose down'
+                    bash 'docker-compose down'
                 }
             }
         }
