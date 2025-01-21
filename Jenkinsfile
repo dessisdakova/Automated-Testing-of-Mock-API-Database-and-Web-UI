@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: '5f98fae6-a885-4ec8-85d6-55222cd53cb9', url: 'https://github.com/dessisdakova/Automated-Testing-of-Mock-API-Database-and-Web-UI'
+                git credentialsId: '688dc148-0b71-4853-a39d-9f8dfc606d1c', url: 'https://github.com/dessisdakova/Automated-Testing-of-Mock-API-Database-and-Web-UI'
             }
         }
 
